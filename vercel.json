@@ -1,0 +1,43 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/",
+        "dest": "app.py"
+      },
+      {
+        "src": "/static/(.*)",
+        "status": 404,
+        "headers": {
+          "Location": "/"
+        }
+      },
+      {
+        "src": "/login",
+        "dest": "app.py"
+      },
+      {
+        "src": "/signup",
+        "dest": "app.py"
+      },
+      {
+        "src": "/dashboard",
+        "dest": "app.py"
+      },
+      {
+        "src": "/home",
+        "dest": "app.py"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "app.py"
+      }
+    ]
+
+  }
